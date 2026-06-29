@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#06172D">
+  <meta name="description" content="张黎明数据新闻独立H5：深夜蓝+电亮黄视觉风格，滚动触发、滑块、点击展开和网络图交互。">
+  <title>灯亮之前，他在路上｜张黎明数据新闻 H5</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script defer src="./vendor/gsap.min.js"></script>
+  <script defer src="./vendor/ScrollTrigger.min.js"></script>
+  <script defer src="./vendor/echarts.min.js"></script>
+  <script type="module" src="./scripts/interactions.js"></script>
+</head>
+<body>
+  <noscript>请开启 JavaScript 以查看滑块、点亮和网络图交互；正文核心信息仍可通过静态内容阅读。</noscript>
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+
+  <nav class="story-nav" aria-label="章节导航">
+    <a href="#hero" aria-label="回到开屏"></a>
+    <a href="#road" aria-label="路有多长"></a>
+    <a href="#time" aria-label="时间怎么省"></a>
+    <a href="#innovation" aria-label="创新怎么长"></a>
+    <a href="#robot" aria-label="机器人"></a>
+    <a href="#community" aria-label="社区楼道"></a>
+    <a href="#legacy" aria-label="更多人出发"></a>
+  </nav>
+
+  <header class="story-section hero-section" id="hero">
+    <div class="hero-grid" aria-hidden="true">
+      <span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <div class="hero-content reveal-on-scroll">
+      <p class="eyebrow">数据新闻 H5｜深夜蓝 + 电亮黄</p>
+      <h1>灯亮之前，<br>他在路上</h1>
+      <p class="hero-subtitle">张黎明的31年抢修路、8万公里巡线图与一次次现场创新</p>
+      <p class="hero-copy">停电对大多数人来说，是灯灭的一瞬。对张黎明来说，是电话响起后那段必须更快一点的路。</p>
+    </div>
+    <div class="metric-stage reveal-on-scroll" aria-label="关键数据">
+      <article class="flip-card" data-metric-id="years"><strong>31</strong><span>年一线抢修</span></article>
+      <article class="flip-card" data-metric-id="mileage"><strong>8万+</strong><span>公里累计巡线</span></article>
+      <article class="flip-card" data-metric-id="repairs"><strong>近2万</strong><span>次抢修与操作</span></article>
+      <article class="flip-card" data-metric-id="drawings"><strong>1500+</strong><span>张手绘线路图</span></article>
+      <article class="flip-card" data-metric-id="innovations"><strong>400+</strong><span>项技术革新</span></article>
+    </div>
+    <p class="scroll-cue">向下滑动，沿着一条抢修路看见数据</p>
+  </header>
+
+  <main>
+    <section class="story-section split-section" id="road">
+      <div class="section-copy reveal-on-scroll">
+        <p class="eyebrow">第一幕｜路有多长</p>
+        <h2>31年抢修路线</h2>
+        <p>电力抢修常常发生在最不方便的时候：深夜、暴雨、寒潮、高温。8万多公里巡线，不只是里程，也是责任半径。</p>
+        <p>这里不硬画真实社区坐标，而用抽象片区地图表达“路径判断”：故障点、抢修路线、处理结果。</p>
+      </div>
+      <div class="map-panel reveal-on-scroll" aria-label="抽象巡线路径图">
+        <svg viewBox="0 0 420 280" role="img" aria-label="抽象片区线路和抢修路径">
+          <defs>
+            <linearGradient id="lineGlow" x1="0" x2="1" y1="0" y2="1">
+              <stop offset="0" stop-color="#4FD7FF" />
+              <stop offset="1" stop-color="#FFD84D" />
+            </linearGradient>
+            <filter id="glow">
+              <feGaussianBlur stdDeviation="3.5" result="blur" />
+              <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+            </filter>
+          </defs>
+          <path class="map-road" d="M30 210 C90 168 84 96 160 84 S268 112 376 42" />
+          <path class="map-road dim" d="M52 68 C112 96 132 156 210 158 S298 128 382 194" />
+          <path class="map-route" d="M44 222 C96 206 123 156 175 140 C225 122 270 96 355 58" />
+          <g class="tower" transform="translate(72 170)"><path d="M0 46 L18 0 L36 46 M8 28 H28 M4 38 H32" /></g>
+          <g class="tower" transform="translate(208 106)"><path d="M0 46 L18 0 L36 46 M8 28 H28 M4 38 H32" /></g>
+          <g class="tower" transform="translate(330 38)"><path d="M0 46 L18 0 L36 46 M8 28 H28 M4 38 H32" /></g>
+        </svg>
+        <button class="fault-point" style="left:18%;top:58%" data-fault-index="0">A</button>
+        <button class="fault-point" style="left:47%;top:34%" data-fault-index="1">B</button>
+        <button class="fault-point" style="left:76%;top:66%" data-fault-index="2">C</button>
+        <div class="fault-detail" id="fault-detail" aria-live="polite">
+          <strong>点击故障点</strong>
+          <span>查看“故障点 → 抢修路线 → 处理结果”。</span>
+        </div>
+      </div>
+      <div class="paper-wall reveal-on-scroll" aria-label="线路图资料墙">
+        <div class="paper-card">杆塔位置</div>
+        <div class="paper-card">道路绕行</div>
+        <div class="paper-card">用户影响</div>
+        <div class="paper-card">先查节点</div>
+      </div>
+    </section>
+
+    <section class="story-section time-section" id="time">
+      <div class="section-copy reveal-on-scroll">
+        <p class="eyebrow">第二幕｜把时间省下来</p>
+        <h2>从45分钟到8分钟</h2>
+        <p>许多改造不是先在实验室想出来，而是在同一个问题反复出现后，被现场一步步逼出来。</p>
+      </div>
+      <div class="compare-card reveal-on-scroll">
+        <div class="time-headline"><span>45分钟</span><i>→</i><span>8分钟</span></div>
+        <label class="slider-label" for="slider-input">拖动滑块，对比改造前后流程</label>
+        <input id="slider-input" class="slider-input" type="range" min="0" max="100" value="50" aria-label="拖动对比45分钟和8分钟流程">
+        <div class="compare-track">
+          <div class="flow-column old-flow" id="old-flow">
+            <h3>改造前</h3>
+            <ol>
+              <li>停电隔离</li><li>登高作业</li><li>更换保险</li><li>复核送电</li>
+            </ol>
+          </div>
+          <div class="flow-column new-flow" id="new-flow">
+            <h3>改造后</h3>
+            <ol>
+              <li>地面操作</li><li>快速更换</li><li>复核送电</li>
+            </ol>
+          </div>
+          <div class="compare-divider" id="compare-divider" aria-hidden="true"></div>
+        </div>
+        <div class="time-result" id="time-result">缩短约82.2%</div>
+        <p class="note">提示：按(45-8)/45计算；页面展示为一位小数。</p>
+      </div>
+    </section>
+
+    <section class="story-section innovation-section" id="innovation">
+      <div class="section-copy reveal-on-scroll">
+        <p class="eyebrow">第三幕｜创新怎么长出来</p>
+        <h2>从故障点到发明点</h2>
+        <p>真正让经验留下来的，是把零散的“好办法”，变成能复用、能传下去的方法库。</p>
+      </div>
+      <div class="funnel-wrap reveal-on-scroll" aria-label="创新漏斗图">
+        <button class="funnel-step" data-funnel-index="0">现场痛点</button>
+        <button class="funnel-step" data-funnel-index="1">经验记录</button>
+        <button class="funnel-step" data-funnel-index="2">工具改造</button>
+        <button class="funnel-step" data-funnel-index="3">测试验证</button>
+        <button class="funnel-step" data-funnel-index="4">固化扩散</button>
+      </div>
+      <div class="funnel-detail reveal-on-scroll" id="funnel-detail" aria-live="polite">点击漏斗节点，查看经验如何变成果。</div>
+      <div class="case-grid reveal-on-scroll">
+        <article class="case-card" data-case-index="0">
+          <h3>可摘取式低压刀闸</h3>
+          <p>从45分钟压缩到8分钟，站在地面完成操作。</p>
+        </article>
+        <article class="case-card" data-case-index="1">
+          <h3>抢修知识沉淀</h3>
+          <p>近万个故障分析，沉淀成案例库与百宝书。</p>
+        </article>
+      </div>
+      <div class="keyword-cloud reveal-on-scroll" aria-label="报道关键词云">
+        <span class="w5">抢修</span><span class="w5">创新</span><span class="w4">服务</span><span class="w4">线路</span><span class="w4">故障</span><span class="w3">机器人</span><span class="w3">楼道</span><span class="w3">社区</span><span class="w2">图纸</span><span class="w2">万家</span>
+      </div>
+    </section>
+
+    <section class="story-section robot-section" id="robot">
+      <div class="section-copy reveal-on-scroll">
+        <p class="eyebrow">第四幕｜把人从高处换回地面</p>
+        <h2>机器人接过高危工序</h2>
+        <p>更快之外，还有更安全：让工人少冒一点险，让经验变成远程控制、视觉识别和定位能力。</p>
+      </div>
+      <div class="robot-panel reveal-on-scroll">
+        <svg class="robot-svg" viewBox="0 0 360 300" role="img" aria-label="配网带电作业机器人结构拆解示意">
+          <circle class="robot-halo" cx="180" cy="146" r="116" />
+          <rect class="robot-body" x="132" y="100" width="96" height="88" rx="22" />
+          <circle class="robot-eye" cx="164" cy="132" r="10" />
+          <circle class="robot-eye" cx="198" cy="132" r="10" />
+          <path class="robot-arm" d="M132 146 C82 126 72 82 58 48" />
+          <path class="robot-arm" d="M228 146 C282 122 292 92 316 58" />
+          <path class="robot-arm yellow" d="M150 188 C122 222 100 236 82 260" />
+          <path class="robot-arm yellow" d="M210 188 C236 220 260 238 280 260" />
+          <text x="180" y="228" text-anchor="middle">地面遥控</text>
+        </svg>
+        <div class="robot-controls" role="group" aria-label="机器人部件说明">
+          <button data-part="insulation">绝缘</button>
+          <button data-part="positioning">定位</button>
+          <button data-part="vision">视觉识别</button>
+          <button data-part="remote">远程控制</button>
+        </div>
+        <div class="robot-detail" id="robot-detail" aria-live="polite">点击部件，查看为什么它能让人回到地面。</div>
+      </div>
+    </section>
+
+    <section class="story-section community-section" id="community">
+      <div class="section-copy reveal-on-scroll">
+        <p class="eyebrow">第五幕｜光照到哪里</p>
+        <h2>从抢修现场到社区楼道</h2>
+        <p>技术缩短了抢修时间，服务把光送进日常生活。滚动这一屏，看黑楼道一层层亮起来。</p>
+      </div>
+      <div class="building-wrap reveal-on-scroll" aria-label="黑楼道点亮动效">
+        <div class="building-roof">黎明·善小 微基金</div>
+        <div class="building-grid">
+          <span class="building-window" data-light-step="1"></span><span class="building-window" data-light-step="2"></span><span class="building-window" data-light-step="3"></span>
+          <span class="building-window" data-light-step="4"></span><span class="building-window" data-light-step="5"></span><span class="building-window" data-light-step="6"></span>
+          <span class="building-window" data-light-step="7"></span><span class="building-window" data-light-step="8"></span><span class="building-window" data-light-step="9"></span>
+          <span class="building-window" data-light-step="10"></span><span class="building-window" data-light-step="11"></span><span class="building-window" data-light-step="12"></span>
+          <span class="building-window" data-light-step="13"></span><span class="building-window" data-light-step="14"></span><span class="building-window" data-light-step="15"></span>
+          <span class="building-window" data-light-step="16"></span><span class="building-window" data-light-step="17"></span><span class="building-window" data-light-step="18"></span>
+        </div>
+        <p class="light-caption" id="light-caption">有人回家，不该摸黑上楼。</p>
+      </div>
+      <div class="community-stats reveal-on-scroll">
+        <article><strong>11</strong><span>个社区</span></article>
+        <article><strong>150+</strong><span>位服务档案</span></article>
+        <article><strong>近万</strong><span>次志愿服务</span></article>
+        <article><strong>148</strong><span>个黑楼道</span></article>
+        <article><strong>2000+</strong><span>户居民</span></article>
+      </div>
+      <p class="note reveal-on-scroll">口径提示：148个黑楼道与后续400+楼道属于不同统计阶段，本页不混用。</p>
+    </section>
+
+    <section class="story-section legacy-section" id="legacy">
+      <div class="section-copy reveal-on-scroll">
+        <p class="eyebrow">第六幕｜一个人之后</p>
+        <h2>更多人跟着出发</h2>
+        <p>真正重要的，不只是一个人做了多少事，而是这些经验有没有留下来、传下去。</p>
+      </div>
+      <div class="chart-card reveal-on-scroll">
+        <div id="legacy-chart" class="legacy-chart" role="img" aria-label="从张黎明向方法、队伍、结果扩散的网络图"></div>
+        <div id="legacy-fallback" class="legacy-fallback" hidden>
+          <p>张黎明 → 线路图 / 案例库 / 刀闸改造 / 机器人研发 → 服务队 / 创新工作室 / 电力创客 → 荣誉与技能提升</p>
+        </div>
+      </div>
+      <blockquote class="ending reveal-on-scroll">一盏灯亮起，是一次抢修的结束。也是下一次改造的起点。灯亮之前，他在路上；灯亮之后，这条路没有停。</blockquote>
+    </section>
+  </main>
+
+  <footer class="source-footer">
+    <h2>数据来源与口径说明</h2>
+    <p>本H5按公开报道制作演示版。专利数、机器人推广、楼道点亮等存在统计时点差异，页面均以备注方式处理。</p>
+    <ol>
+      <li><a href="https://www.xinhuanet.com/politics/2018-05/28/c_1122900378.htm">新华社/新华网：中宣部授予张黎明“时代楷模”称号</a></li>
+      <li><a href="https://www.xinhuanet.com/politics/ldzt/sdkmzlm/index.htm">新华网专题：时代楷模张黎明</a></li>
+      <li><a href="https://www.workercn.cn/papers/grrb/2018/06/28/7/grrb201806287.pdf">工人日报2018年6月28日PDF</a></li>
+      <li><a href="https://www.news.cn/politics/leaders/2022-10/01/c_1129047134.htm">新华网：创新逐梦电力人</a></li>
+      <li><a href="https://www.12371.cn/2022/09/26/ARTI1664181119271247.shtml">共产党员网：张黎明，创新使工作更快乐</a></li>
+      <li><a href="https://www.qstheory.cn/laigao/ycjx/2022-10/20/c_1129072707.htm">求是网：架起党联系群众的连心桥</a></li>
+    </ol>
+  </footer>
+</body>
+</html>
