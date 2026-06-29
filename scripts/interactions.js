@@ -20,6 +20,7 @@ window.addEventListener('DOMContentLoaded', () => {
   initRobotParts();
   initBuildingLights();
   initLegacyChart();
+  initAdvancedNarrative();
 });
 
 function hydrateMetricCards() {
@@ -231,6 +232,7 @@ export function initLegacyChart() {
 
   const echarts = window.echarts;
   const chart = echarts.init(container, null, { renderer: 'canvas' });
+  if (fallback) fallback.hidden = true;
   const nodes = makeGraphNodes(DATA_NEWS.legacyNetwork);
   const links = makeGraphEdges(DATA_NEWS.legacyNetwork);
   const categories = makeCategoryList(DATA_NEWS.legacyNetwork);
@@ -248,7 +250,7 @@ export function initLegacyChart() {
     },
     legend: {
       bottom: 0,
-      textStyle: { color: '#E7F6FF' },
+      textStyle: { color: '#F8E9C8', fontWeight: 700 },
       data: categories.map((item) => item.name)
     },
     series: [{
@@ -261,8 +263,8 @@ export function initLegacyChart() {
       data: nodes,
       links,
       edgeSymbol: ['none', 'arrow'],
-      force: { repulsion: 260, edgeLength: [78, 150], gravity: 0.08 },
-      label: { show: true, color: '#E7F6FF', fontWeight: 700 },
+      force: { repulsion: 320, edgeLength: [90, 165], gravity: 0.06 },
+      label: { show: true, color: '#FFF7D8', fontWeight: 800, fontSize: 12 },
       lineStyle: { color: 'source', curveness: 0.18, opacity: 0.72, width: 2 },
       itemStyle: { borderColor: '#06172D', borderWidth: 2, shadowBlur: 16, shadowColor: 'rgba(79,215,255,0.35)' },
       emphasis: { focus: 'adjacency', lineStyle: { width: 4 } }
@@ -270,4 +272,38 @@ export function initLegacyChart() {
   });
 
   window.addEventListener('resize', () => chart.resize());
+}
+
+
+function initAdvancedNarrative() {
+  const routePanel = $('.map-panel');
+  const cityLights = $('.city-lights');
+  const targets = [routePanel, cityLights].filter(Boolean);
+  if (!targets.length) return;
+
+  const activate = (element) => {
+    if (element === routePanel) element.classList.add('is-drawn');
+    if (element === cityLights) element.classList.add('is-lit');
+  };
+
+  if (window.gsap && window.ScrollTrigger) {
+    targets.forEach((element) => {
+      window.ScrollTrigger.create({
+        trigger: element,
+        start: 'top 78%',
+        once: true,
+        onEnter: () => activate(element)
+      });
+    });
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      activate(entry.target);
+      observer.unobserve(entry.target);
+    });
+  }, { threshold: 0.3 });
+  targets.forEach((element) => observer.observe(element));
 }

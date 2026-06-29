@@ -29,15 +29,17 @@
 
   <header class="story-section hero-section" id="hero">
     <div class="hero-grid" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
-    <img class="hero-sticker hero-sticker-moon" src="./assets/story/sticker-05-stars-moon.webp" alt="">
-    <img class="hero-sticker hero-sticker-arrow" src="./assets/story/sticker-03-arrow.webp" alt="">
-    <img class="hero-sticker hero-sticker-bolt" src="./assets/story/sticker-06-lightning.webp" alt="">
+    <img class="hero-sticker hero-sticker-moon" src="./assets/story/sticker-05-stars-moon.png" alt="">
+    <img class="hero-sticker hero-sticker-arrow" src="./assets/story/decor-arrow.png" alt="">
+    <img class="hero-sticker hero-sticker-bolt" src="./assets/story/decor-lightning.png" alt="">
+    <img class="hero-ip-sticker" src="./assets/story/ip-electrician-full-web.png" alt="电力抢修 IP 装饰">
     <div class="hero-content reveal-on-scroll">
       <p class="eyebrow">抢修档案｜张黎明</p>
       <h1>灯亮之前，<br>他在路上</h1>
       <p class="hero-subtitle">张黎明的31年抢修路、8万公里巡线图与一次次现场创新</p>
       <p class="lead-sentence">停电对大多数人来说，是灯灭的一瞬。对张黎明来说，是电话响起后那段必须更快一点的路。</p>
     </div>
+    <aside class="ip-guide hero-guide reveal-on-scroll"><span>抢修员视角</span><strong>电话响起后，先判断路线，再奔赴现场。</strong></aside>
     <figure class="photo-card hero-main-photo reveal-on-scroll">
       <img src="./assets/story/hero-person.webp" alt="张黎明夜间抢修资料照片">
       <figcaption>夜班电话响起后，先出发的人</figcaption>
@@ -71,8 +73,15 @@
         <figure class="photo-card small-photo"><img src="./assets/story/road-person-map.webp" alt="张黎明查看线路图资料照片"><figcaption>先看图，再出车</figcaption></figure>
         <figure class="photo-card small-photo"><img src="./assets/story/road-flashlight.webp" alt="手电照明下的线路图"><figcaption>手电照着图纸，先把路找准</figcaption></figure>
       </div>
+      <aside class="ip-guide road-guide reveal-on-scroll"><strong>“活地图”不是记路线，是把故障、道路和用户影响一起记住。</strong></aside>
       <div class="map-panel photo-card reveal-on-scroll" aria-label="四象限故障判断板">
-        <img src="./assets/story/road-map-close.webp" alt="手绘线路图近景">
+        <img src="./assets/story/road-patrol-map.png" alt="手绘巡线路径地图">
+        <svg class="route-trace" viewBox="0 0 100 100" aria-hidden="true">
+          <path class="route-path" d="M12 76 C22 55 35 62 43 42 S64 23 83 35 C91 41 85 58 72 66 S44 82 28 72" />
+          <circle class="route-dot route-dot-a" cx="22" cy="58" r="2.5" />
+          <circle class="route-dot route-dot-b" cx="70" cy="34" r="2.5" />
+          <circle class="route-dot route-dot-c" cx="63" cy="64" r="2.5" />
+        </svg>
         <div class="fault-quadrant" aria-hidden="true">
           <div class="q-cell"><b>象限一</b><span>夜间故障</span></div>
           <div class="q-cell"><b>象限二</b><span>暴雨跳闸</span></div>
@@ -85,7 +94,11 @@
         <div class="fault-detail" id="fault-detail" aria-live="polite"><strong>A点：夜间故障</strong><span>故障点、抢修路线与处理结果同步呈现。</span></div>
       </div>
       <div class="paper-wall reveal-on-scroll" aria-label="线路图资料墙"><div class="paper-card">杆塔位置</div><div class="paper-card">道路绕行</div><div class="paper-card">用户影响</div><div class="paper-card">先查节点</div></div>
-      <div class="element-strip reveal-on-scroll" aria-label="路线上相关元素"><img src="./assets/story/sticker-11-pole.webp" alt=""><span>线路</span><img src="./assets/story/sticker-07-pin.webp" alt=""><span>故障点</span><img src="./assets/story/sticker-03-arrow.webp" alt=""><span>最快路径</span></div>
+      <div class="section-decor road-decor reveal-on-scroll" aria-label="路线章节装饰元素">
+        <img class="decor-item decor-pole" src="./assets/story/decor-pole.png" alt="电线杆装饰">
+        <img class="decor-item decor-pin" src="./assets/story/decor-location.png" alt="故障点图钉装饰">
+        <img class="decor-item decor-arrow" src="./assets/story/decor-arrow.png" alt="路线箭头装饰">
+      </div>
     </section>
 
     <section class="story-section time-section" id="time">
@@ -102,7 +115,12 @@
         <div class="compare-track"><div class="flow-column old-flow" id="old-flow"><h3>改造前</h3><ol><li>停电隔离</li><li>登高作业</li><li>更换保险</li><li>复核送电</li></ol></div><div class="flow-column new-flow" id="new-flow"><h3>改造后</h3><ol><li>地面操作</li><li>快速更换</li><li>复核送电</li></ol></div><div class="compare-divider" id="compare-divider" aria-hidden="true"></div></div>
         <div class="time-result" id="time-result">缩短约82.2%</div>
       </div>
-      <div class="element-strip reveal-on-scroll" aria-label="抢修工具元素"><img src="./assets/story/sticker-13-helmet.webp" alt=""><span>安全帽</span><img src="./assets/story/sticker-14-wrench.webp" alt=""><span>工具</span><img src="./assets/story/sticker-06-lightning.webp" alt=""><span>停送电</span></div>
+      <aside class="ip-guide time-guide reveal-on-scroll"><span>现场改造</span><strong>高级感不靠堆图，而是让“45→8”这条链路一眼看懂。</strong></aside>
+      <div class="section-decor time-decor reveal-on-scroll" aria-label="抢修工具装饰元素">
+        <img class="decor-item decor-helmet" src="./assets/story/decor-helmet.png" alt="安全帽装饰">
+        <img class="decor-item decor-wrench" src="./assets/story/decor-wrench.png" alt="扳手装饰">
+        <img class="decor-item decor-lightning" src="./assets/story/decor-lightning.png" alt="闪电装饰">
+      </div>
       <p class="transition-copy reveal-on-scroll">一次改装解决的是一次抢修。真正让经验留下来的，是把零散的“好办法”，变成能复用、能传下去的方法库。</p>
     </section>
 
@@ -113,17 +131,27 @@
         <p>遇到故障，他不是修完就算，而是把现场里暴露出来的问题一条条记下：什么情况下先判断哪里，哪类故障最容易误判，什么工具需要改，什么流程还能再短一点。长期下来，他和团队分析近万个故障，总结出50多个经典案例，形成涵盖30大类300多种故障抢修经验的《急修案例库》和《抢修百宝书》；在这套经验之上，又逐步做出了400余项技术革新，形成百余项国家专利，20余项成果填补智能电网建设空白。故障并没有停在现场，而是继续往前走，变成了图纸、案例、工具和方法。</p>
       </div>
       <div class="innovation-collage reveal-on-scroll"><figure class="photo-card small-photo"><img src="./assets/story/innovation-person.webp" alt="创新工作室"><figcaption>夜班经验带回工作室</figcaption></figure><figure class="photo-card small-photo"><img src="./assets/story/innovation-notebook.webp" alt="抢修笔记"><figcaption>故障、路线、工具逐条记录</figcaption></figure><figure class="photo-card small-photo"><img src="./assets/story/innovation-team.webp" alt="工作室设备"><figcaption>从现场工具改起</figcaption></figure></div>
+      <aside class="ip-guide innovation-guide reveal-on-scroll"><span>经验沉淀</span><strong>把一次抢修里的问题写下来，才会长成可复制的方法。</strong></aside>
       <div class="funnel-wrap reveal-on-scroll" aria-label="创新漏斗图"><button class="funnel-step" data-funnel-index="0">现场痛点</button><button class="funnel-step" data-funnel-index="1">经验记录</button><button class="funnel-step" data-funnel-index="2">工具改造</button><button class="funnel-step" data-funnel-index="3">测试验证</button><button class="funnel-step" data-funnel-index="4">固化扩散</button></div>
       <div class="funnel-detail reveal-on-scroll" id="funnel-detail" aria-live="polite">选择漏斗节点，查看经验如何变成果。</div>
-      <div class="case-grid reveal-on-scroll"><article class="case-card" data-case-index="0"><span>CASE 01</span><h3>可摘取式低压刀闸</h3><p>从45分钟压缩到8分钟，站在地面完成操作。</p></article><article class="case-card" data-case-index="1"><span>CASE 02</span><h3>抢修知识沉淀</h3><p>近万个故障分析，沉淀成案例库与百宝书。</p></article></div>
-      <div class="element-strip reveal-on-scroll" aria-label="创新记录元素"><img src="./assets/story/sticker-02-note.webp" alt=""><span>记录</span><img src="./assets/story/sticker-09-folder.webp" alt=""><span>案例库</span><img src="./assets/story/sticker-10-bulb.webp" alt=""><span>发明点</span></div>
+      <div class="case-grid archive-case-grid reveal-on-scroll"><article class="case-card" data-case-index="0"><span>CASE 01</span><h3>可摘取式低压刀闸</h3><p>从45分钟压缩到8分钟，站在地面完成操作。</p></article><article class="case-card" data-case-index="1"><span>CASE 02</span><h3>抢修知识沉淀</h3><p>近万个故障分析，沉淀成案例库与百宝书。</p></article></div>
+      <div class="section-decor innovation-decor reveal-on-scroll" aria-label="创新记录装饰元素">
+        <img class="decor-item decor-note" src="./assets/story/decor-note.png" alt="便签记录装饰">
+        <img class="decor-item decor-folder" src="./assets/story/decor-folder.png" alt="案例库档案袋装饰">
+        <img class="decor-item decor-bulb" src="./assets/story/decor-bulb.png" alt="发明点灯泡装饰">
+      </div>
       <p class="transition-copy reveal-on-scroll">当一把刀闸已经不能满足新的需求，问题就会继续往前走。下一步不再是“能不能更快”，而是“能不能让人不再上高处”。</p>
     </section>
 
     <section class="story-section robot-section" id="robot">
       <div class="section-copy reveal-on-scroll"><p class="eyebrow">档案 04｜四、把人从高处换回地面</p><h2>机器人接过高危工序</h2><p>更快之外，张黎明一直在想另一件事：能不能让工人少冒一点险。</p><p>带电作业危险、强度高，很多关键工序长期依赖高空人工完成。围绕这个问题，张黎明把多年抢修里积累下来的判断经验，转成了研发思路，去找绝缘、定位、视觉识别和远程控制这些环节里的突破口。后来，配网带电作业机器人从实验室一步步走向现场，从第一代迭代到第四代：更轻、更稳，也更适合复杂环境和狭小空间作业。机器人接过的，不只是一次高空动作，更是一部分原本必须由人去承担的风险。</p></div>
       <div class="robot-panel reveal-on-scroll"><figure class="photo-card robot-main-photo"><img src="./assets/story/robot-machine.webp" alt="配网带电作业机器人资料图"><figcaption>带电作业机器人：从“人上杆”到“机上杆”</figcaption></figure><figure class="photo-card robot-person-photo"><img src="./assets/story/robot-person.webp" alt="张黎明与带电作业机器人"></figure><div class="robot-controls" role="group" aria-label="机器人部件说明"><button data-part="insulation">绝缘</button><button data-part="positioning">定位</button><button data-part="vision">视觉识别</button><button data-part="remote">远程控制</button></div><div class="robot-detail" id="robot-detail" aria-live="polite">选择部件，查看它如何降低高空作业风险。</div></div>
-      <div class="element-strip reveal-on-scroll" aria-label="高危作业替代元素"><img src="./assets/story/sticker-15-electrician.webp" alt=""><span>人少登高</span><img src="./assets/story/sticker-13-helmet.webp" alt=""><span>风险降低</span><img src="./assets/story/sticker-18-bolt-cartoon.webp" alt=""><span>带电作业</span></div>
+      <aside class="ip-guide robot-guide reveal-on-scroll"><span>风险替代</span><strong>从“人上杆”到“机上杆”，核心是把风险从人身上拿下来。</strong></aside>
+      <div class="section-decor robot-decor reveal-on-scroll" aria-label="高危作业替代装饰元素">
+        <img class="decor-item decor-electrician" src="./assets/story/ip-electrician-full-web.png" alt="电工 IP 装饰">
+        <img class="decor-item decor-helmet" src="./assets/story/decor-helmet.png" alt="安全帽装饰">
+        <img class="decor-item decor-bolt" src="./assets/story/decor-lightning.png" alt="带电作业闪电装饰">
+      </div>
       <p class="transition-copy reveal-on-scroll">但张黎明的工作，并不只停在抢修现场。电亮起来以后，他还继续往社区里走。</p>
     </section>
 
@@ -136,17 +164,36 @@
         </div>
         <div class="light-caption" id="light-caption"><strong>37栋老楼、148个“黑楼道”</strong><span>让2000多户居民不必再摸黑上楼。</span></div>
       </div>
-      <div class="compact-media-grid three reveal-on-scroll"><figure class="photo-card small-photo"><img src="./assets/story/community-repair.webp" alt="志愿者维修楼道灯"><figcaption>修一盏灯</figcaption></figure><figure class="photo-card small-photo"><img src="./assets/story/community-walk.webp" alt="居民从楼道经过"><figcaption>照一段回家路</figcaption></figure><figure class="photo-card small-photo"><img src="./assets/story/community-people.webp" alt="张黎明社区服务"><figcaption>把服务留在社区</figcaption></figure></div>
+      <div class="compact-media-grid three community-gallery reveal-on-scroll"><figure class="photo-card small-photo"><img src="./assets/story/community-repair.webp" alt="志愿者维修楼道灯"><figcaption>修一盏灯</figcaption></figure><figure class="photo-card small-photo"><img src="./assets/story/community-walk.webp" alt="居民从楼道经过"><figcaption>照一段回家路</figcaption></figure><figure class="photo-card small-photo"><img src="./assets/story/community-people.webp" alt="张黎明社区服务"><figcaption>把服务留在社区</figcaption></figure></div>
+      <aside class="ip-guide community-guide reveal-on-scroll"><span>点灯行动</span><strong>一盏楼道灯，是抢修之外更具体的“万家灯火”。</strong></aside>
       <div class="community-stats reveal-on-scroll"><article><strong>11</strong><span>个社区</span></article><article><strong>150+</strong><span>位服务档案</span></article><article><strong>近万</strong><span>次志愿服务</span></article><article><strong>148</strong><span>个黑楼道</span></article><article><strong>2000+</strong><span>户居民</span></article></div><p class="note reveal-on-scroll">数据口径：148个“黑楼道”与400+楼道来自不同公开报道时点，分别列示。</p>
-      <div class="element-strip reveal-on-scroll" aria-label="社区服务元素"><img src="./assets/story/sticker-16-building.webp" alt=""><span>老楼</span><img src="./assets/story/sticker-17-lamp.webp" alt=""><span>楼道灯</span><img src="./assets/story/sticker-10-bulb.webp" alt=""><span>照亮邻里</span></div>
+      <div class="section-decor community-decor reveal-on-scroll" aria-label="社区服务装饰元素">
+        <img class="decor-item decor-building" src="./assets/story/decor-city-lights.png" alt="老楼装饰">
+        <img class="decor-item decor-lamp" src="./assets/story/decor-lamp.png" alt="楼道灯装饰">
+        <img class="decor-item decor-bulb" src="./assets/story/decor-bulb.png" alt="灯泡装饰">
+      </div>
       <p class="transition-copy reveal-on-scroll">一盏灯亮起来之后，故事并不会停在一个人身上。真正留下来的，是更多人开始沿着这条路继续往前走。</p>
     </section>
 
     <section class="story-section legacy-section" id="legacy">
       <div class="section-copy reveal-on-scroll"><p class="eyebrow">档案 06｜六、一个人之后</p><h2>更多人跟着出发</h2><p>真正重要的，从来不只是一个人做了多少事，而是这些经验后来有没有留下来。</p><p>张黎明把手绘线路图变成了方法，把案例库变成了班组共用的工具，也把创新变成了更多人能接上的工作。创新阵地后来培育出63个创新工作室、2000余名“电力创客”“蓝领创客”；以他名字命名的共产党员服务队，发展为30个分队、400多名队员组成的常态化志愿服务组织。另一组更具体的数据也说明了这件事：近三年来，公司先后有58人次获得省部级以上劳动模范和五一劳动奖章等荣誉，2700多人次提升了技能等级。最初只画在他笔记本上的那张“抢修地图”，后来慢慢变成了更多人的工作方法。</p></div>
       <figure class="photo-card legacy-photo reveal-on-scroll"><img src="./assets/story/legacy-team.webp" alt="张黎明带团队资料照片"><figcaption>经验扩散：从一个人，到一支队伍</figcaption></figure>
+      <aside class="ip-guide legacy-guide reveal-on-scroll"><span>扩散路径</span><strong>这张图保留：它讲的是经验怎样从一个人扩散成方法和队伍。</strong></aside>
       <div class="chart-card reveal-on-scroll"><div id="legacy-chart" class="legacy-chart" role="img" aria-label="从张黎明向方法、队伍、结果扩散的网络图"></div><div id="legacy-fallback" class="legacy-fallback"><p>经验扩散链：线路图、案例库、刀闸改造、机器人研发、服务队、创新工作室、电力创客与技能提升。</p></div><div class="legacy-ledger" aria-label="经验扩散档案卡"><article><span>方法</span><strong>线路图 / 案例库 / 百宝书</strong></article><article><span>队伍</span><strong>30个分队 / 400多名队员</strong></article><article><span>创新</span><strong>63个创新工作室 / 2000余名创客</strong></article><article><span>结果</span><strong>58人次荣誉 / 2700多人次技能提升</strong></article></div></div>
-      <div class="element-strip reveal-on-scroll" aria-label="经验传承元素"><img src="./assets/story/sticker-08-clip.webp" alt=""><span>方法留下</span><img src="./assets/story/sticker-09-folder.webp" alt=""><span>队伍接上</span><img src="./assets/story/sticker-12-streetlight.webp" alt=""><span>路继续走</span></div>
+      <figure class="word-cloud-card reveal-on-scroll" aria-label="张黎明电力抢修关键词云">
+        <div class="word-cloud-head"><span>关键词云</span><strong>把一个人的经验，拆成更多能被看见的词</strong></div>
+        <img class="word-cloud-image" src="./assets/story/word-cloud.png" alt="张黎明、电力抢修、基层创新、巡线地图与万家灯火关键词云">
+        <figcaption class="word-cloud-note">词云围绕电力抢修、巡线地图、基层创新、社区服务和经验扩散展开。</figcaption>
+      </figure>
+      <div class="section-decor legacy-decor reveal-on-scroll" aria-label="经验传承装饰元素">
+        <img class="decor-item decor-clip" src="./assets/story/decor-clip.png" alt="回形针装饰">
+        <img class="decor-item decor-folder" src="./assets/story/decor-folder.png" alt="档案袋装饰">
+        <img class="decor-item decor-streetlight" src="./assets/story/decor-lamp.png" alt="路灯装饰">
+      </div>
+      <div class="city-lights reveal-on-scroll" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span><span></span>
+        <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+      </div>
       <blockquote class="ending reveal-on-scroll">一盏灯亮起，是一次抢修的结束。也是下一次改造的起点。张黎明的故事并不抽象。它让人看见一条很具体的路径：先把路走熟，再把问题记下；先把工具改好，再把经验留下；最后，让更多人沿着这条路继续往前走。<br><strong>灯亮之前，他在路上。灯亮之后，这条路没有停。</strong></blockquote>
     </section>
   </main>
