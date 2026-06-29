@@ -45,15 +45,6 @@ export function initScrollAnimations() {
     const ScrollTrigger = window.ScrollTrigger;
     gsap.registerPlugin(ScrollTrigger);
 
-    gsap.to('.hero-grid span', {
-      opacity: 0.74,
-      yoyo: true,
-      repeat: -1,
-      stagger: 0.12,
-      duration: 1.4,
-      ease: 'sine.inOut'
-    });
-
     $$('.reveal-on-scroll').forEach((element) => {
       gsap.fromTo(element,
         { autoAlpha: 0, y: 34 },
