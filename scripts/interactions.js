@@ -194,23 +194,19 @@ export function initRobotParts() {
 
 export function initBuildingLights() {
   const wrap = $('.building-wrap');
-  const windows = $$('.building-window');
   const caption = $('#light-caption');
-  if (!wrap || windows.length === 0) return;
+  if (!wrap) return;
 
   const lightAll = () => {
     wrap.classList.add('is-lit');
-    windows.forEach((windowNode, index) => {
-      setTimeout(() => windowNode.classList.add('is-lit'), index * 55);
-    });
-    if (caption) caption.textContent = '37栋老楼、148个“黑楼道”，灯沿着回家的路亮起来。';
+    if (caption) caption.dataset.lit = 'true';
   };
 
   if (window.gsap && window.ScrollTrigger) {
     const gsap = window.gsap;
     const ScrollTrigger = window.ScrollTrigger;
     gsap.registerPlugin(ScrollTrigger);
-    gsap.to(windows, {
+    gsap.to(wrap, {
       scrollTrigger: {
         trigger: wrap,
         start: 'top 72%',
