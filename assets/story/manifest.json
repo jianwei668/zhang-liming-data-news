@@ -166,5 +166,101 @@
     "height": 520,
     "bytes": 17464,
     "description": "闪电贴纸"
+  },
+  {
+    "file": "sticker-01-paper-tape.webp",
+    "source": "素材\\07_插画贴纸PNG\\01_纸胶带.png",
+    "width": 520,
+    "height": 520,
+    "bytes": 50778,
+    "description": "纸胶带"
+  },
+  {
+    "file": "sticker-02-note.webp",
+    "source": "素材\\07_插画贴纸PNG\\02_便签纸.png",
+    "width": 520,
+    "height": 520,
+    "bytes": 10998,
+    "description": "便签纸"
+  },
+  {
+    "file": "sticker-03-arrow.webp",
+    "source": "素材\\07_插画贴纸PNG\\03_手绘箭头.png",
+    "width": 520,
+    "height": 520,
+    "bytes": 15948,
+    "description": "手绘箭头"
+  },
+  {
+    "file": "sticker-04-circle.webp",
+    "source": "素材\\07_插画贴纸PNG\\04_手绘圈注.png",
+    "width": 520,
+    "height": 520,
+    "bytes": 26864,
+    "description": "手绘圈注"
+  },
+  {
+    "file": "sticker-05-stars-moon.webp",
+    "source": "素材\\07_插画贴纸PNG\\05_星星月亮.png",
+    "width": 520,
+    "height": 520,
+    "bytes": 40038,
+    "description": "星星月亮"
+  },
+  {
+    "file": "sticker-06-lightning.webp",
+    "source": "素材\\07_插画贴纸PNG\\06_闪电符号.png",
+    "width": 520,
+    "height": 520,
+    "bytes": 17464,
+    "description": "闪电符号"
+  },
+  {
+    "file": "sticker-07-pin.webp",
+    "source": "素材\\07_插画贴纸PNG\\07_图钉.png",
+    "width": 520,
+    "height": 520,
+    "bytes": 12120,
+    "description": "图钉"
+  },
+  {
+    "file": "sticker-08-clip.webp",
+    "source": "素材\\07_插画贴纸PNG\\08_回形针.png",
+    "width": 520,
+    "height": 520,
+    "bytes": 34002,
+    "description": "回形针"
+  },
+  {
+    "file": "sticker-09-folder.webp",
+    "source": "素材\\07_插画贴纸PNG\\09_档案袋.png",
+    "width": 520,
+    "height": 520,
+    "bytes": 28156,
+    "description": "档案袋"
+  },
+  {
+    "file": "sticker-10-bulb.webp",
+    "source": "素材\\07_插画贴纸PNG\\10_小灯泡.png",
+    "width": 520,
+    "height": 520,
+    "bytes": 18302,
+    "description": "小灯泡"
+  },
+  {
+    "file": "sticker-11-pole.webp",
+    "source": "素材\\07_插画贴纸PNG\\11_电线杆图标.png",
+    "width": 520,
+    "height": 520,
+    "bytes": 18316,
+    "description": "电线杆"
+  },
+  {
+    "file": "sticker-12-streetlight.webp",
+    "source": "素材\\07_插画贴纸PNG\\12_路灯图标.png",
+    "width": 520,
+    "height": 520,
+    "bytes": 9910,
+    "description": "路灯"
   }
 ]

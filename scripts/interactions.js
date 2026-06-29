@@ -203,7 +203,7 @@ export function initBuildingLights() {
     windows.forEach((windowNode, index) => {
       setTimeout(() => windowNode.classList.add('is-lit'), index * 55);
     });
-    if (caption) caption.textContent = '37栋老楼、148个黑楼道，灯一层层亮起来。';
+    if (caption) caption.textContent = '37栋老楼、148个“黑楼道”，灯沿着回家的路亮起来。';
   };
 
   if (window.gsap && window.ScrollTrigger) {
