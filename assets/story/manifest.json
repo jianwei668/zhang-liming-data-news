@@ -1,0 +1,170 @@
+[
+  {
+    "file": "hero-person.webp",
+    "source": "素材\\01_人物照片_张黎明\\02_张黎明_夜间抢修照.jpg",
+    "width": 960,
+    "height": 1200,
+    "bytes": 62444,
+    "description": "hero 人物照片"
+  },
+  {
+    "file": "hero-night-road.webp",
+    "source": "素材\\02_夜间抢修现场\\02_夜间抢修_雨夜道路.jpg",
+    "width": 1400,
+    "height": 1050,
+    "bytes": 193302,
+    "description": "hero 雨夜道路背景"
+  },
+  {
+    "file": "road-person-map.webp",
+    "source": "素材\\01_人物照片_张黎明\\03_张黎明_看线路图.jpg",
+    "width": 960,
+    "height": 1200,
+    "bytes": 72580,
+    "description": "第一幕 看线路图"
+  },
+  {
+    "file": "road-map-close.webp",
+    "source": "素材\\04_线路图纸_笔记档案\\01_手绘线路图_近景.jpg",
+    "width": 1200,
+    "height": 900,
+    "bytes": 63106,
+    "description": "第一幕 手绘线路图"
+  },
+  {
+    "file": "road-flashlight.webp",
+    "source": "素材\\04_线路图纸_笔记档案\\09_线路图_手电照明.jpg",
+    "width": 1200,
+    "height": 900,
+    "bytes": 42004,
+    "description": "第一幕 手电照明"
+  },
+  {
+    "file": "time-aerial.webp",
+    "source": "素材\\02_夜间抢修现场\\04_夜间抢修_高空作业.jpg",
+    "width": 1200,
+    "height": 900,
+    "bytes": 116954,
+    "description": "第二幕 高空作业"
+  },
+  {
+    "file": "time-switch.webp",
+    "source": "素材\\03_楼道点亮_社区\\02_低压刀闸.jpg",
+    "width": 1000,
+    "height": 750,
+    "bytes": 76362,
+    "description": "第二幕 低压刀闸"
+  },
+  {
+    "file": "innovation-person.webp",
+    "source": "素材\\01_人物照片_张黎明\\04_张黎明_创新工作室.jpg",
+    "width": 960,
+    "height": 1200,
+    "bytes": 70072,
+    "description": "第三幕 创新工作室人物"
+  },
+  {
+    "file": "innovation-notebook.webp",
+    "source": "素材\\04_线路图纸_笔记档案\\03_抢修笔记本.jpg",
+    "width": 1200,
+    "height": 900,
+    "bytes": 98574,
+    "description": "第三幕 抢修笔记本"
+  },
+  {
+    "file": "innovation-team.webp",
+    "source": "素材\\03_楼道点亮_社区\\03_创新工作室设备.jpg",
+    "width": 1200,
+    "height": 900,
+    "bytes": 90060,
+    "description": "第三幕 设备工作台"
+  },
+  {
+    "file": "robot-person.webp",
+    "source": "素材\\03_楼道点亮_社区\\01_张黎明_带电作业机器人.jpg",
+    "width": 1200,
+    "height": 900,
+    "bytes": 80336,
+    "description": "第四幕 机器人与人物"
+  },
+  {
+    "file": "robot-machine.webp",
+    "source": "素材\\03_楼道点亮_社区\\02_配网带电作业机器人.jpg",
+    "width": 1200,
+    "height": 900,
+    "bytes": 98930,
+    "description": "第四幕 机器人设备"
+  },
+  {
+    "file": "community-dark.webp",
+    "source": "素材\\03_楼道点亮_社区\\01_老旧楼道_黑暗.jpg",
+    "width": 900,
+    "height": 1200,
+    "bytes": 27684,
+    "description": "第五幕 黑暗楼道"
+  },
+  {
+    "file": "community-lit.webp",
+    "source": "素材\\03_楼道点亮_社区\\02_老旧楼道_灯亮.jpg",
+    "width": 900,
+    "height": 1200,
+    "bytes": 44508,
+    "description": "第五幕 点亮楼道"
+  },
+  {
+    "file": "community-repair.webp",
+    "source": "素材\\03_楼道点亮_社区\\04_志愿者修楼道灯.jpg",
+    "width": 750,
+    "height": 1000,
+    "bytes": 40272,
+    "description": "第五幕 志愿者修灯"
+  },
+  {
+    "file": "community-walk.webp",
+    "source": "素材\\03_楼道点亮_社区\\05_居民楼道_人物经过.jpg",
+    "width": 750,
+    "height": 1000,
+    "bytes": 32990,
+    "description": "第五幕 居民经过"
+  },
+  {
+    "file": "community-people.webp",
+    "source": "素材\\01_人物照片_张黎明\\06_张黎明_社区服务.jpg",
+    "width": 960,
+    "height": 1200,
+    "bytes": 77324,
+    "description": "第五幕 社区服务"
+  },
+  {
+    "file": "legacy-team.webp",
+    "source": "素材\\01_人物照片_张黎明\\05_张黎明_带团队.jpg",
+    "width": 960,
+    "height": 1200,
+    "bytes": 63752,
+    "description": "第六幕 团队照片"
+  },
+  {
+    "file": "paper-texture.webp",
+    "source": "素材\\04_线路图纸_笔记档案\\04_旧纸档案纹理.jpg",
+    "width": 1000,
+    "height": 750,
+    "bytes": 29040,
+    "description": "纸张纹理"
+  },
+  {
+    "file": "sticker-arrow.webp",
+    "source": "素材\\07_插画贴纸PNG\\03_手绘箭头.png",
+    "width": 520,
+    "height": 520,
+    "bytes": 15948,
+    "description": "手绘箭头贴纸"
+  },
+  {
+    "file": "sticker-lightning.webp",
+    "source": "素材\\07_插画贴纸PNG\\06_闪电符号.png",
+    "width": 520,
+    "height": 520,
+    "bytes": 17464,
+    "description": "闪电贴纸"
+  }
+]

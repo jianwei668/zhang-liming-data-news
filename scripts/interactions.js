@@ -199,6 +199,7 @@ export function initBuildingLights() {
   if (!wrap || windows.length === 0) return;
 
   const lightAll = () => {
+    wrap.classList.add('is-lit');
     windows.forEach((windowNode, index) => {
       setTimeout(() => windowNode.classList.add('is-lit'), index * 55);
     });
@@ -242,7 +243,7 @@ export function initLegacyChart() {
   }
 
   const echarts = window.echarts;
-  const chart = echarts.init(container, null, { renderer: 'svg' });
+  const chart = echarts.init(container, null, { renderer: 'canvas' });
   const nodes = makeGraphNodes(DATA_NEWS.legacyNetwork);
   const links = makeGraphEdges(DATA_NEWS.legacyNetwork);
   const categories = makeCategoryList(DATA_NEWS.legacyNetwork);

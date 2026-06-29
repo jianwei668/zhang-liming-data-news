@@ -6,6 +6,8 @@
   <meta name="theme-color" content="#06172D">
   <meta name="description" content="一篇关于张黎明31年抢修路的交互数据新闻：巡线、抢修、创新和社区点灯。">
   <title>灯亮之前，他在路上｜张黎明数据新闻 H5</title>
+  <link rel="preload" as="image" href="./assets/story/hero-night-road.webp">
+  <link rel="preload" as="image" href="./assets/story/hero-person.webp">
   <link rel="stylesheet" href="./styles.css">
   <script defer src="./vendor/gsap.min.js"></script>
   <script defer src="./vendor/ScrollTrigger.min.js"></script>
@@ -31,11 +33,18 @@
     <div class="hero-grid" aria-hidden="true">
       <span></span><span></span><span></span><span></span><span></span><span></span>
     </div>
+    <div class="hero-photo-stack reveal-on-scroll" aria-hidden="true">
+      <figure class="photo-card hero-main-photo tilt-left">
+        <img src="./assets/story/hero-person.webp" alt="张黎明夜间抢修资料照片">
+        <figcaption>夜班电话响起后，先出发的人</figcaption>
+      </figure>
+      <img class="sticker lightning-sticker" src="./assets/story/sticker-lightning.webp" alt="">
+    </div>
     <div class="hero-content reveal-on-scroll">
       <p class="eyebrow">数据新闻｜张黎明</p>
       <h1>灯亮之前，<br>他在路上</h1>
       <p class="hero-subtitle">31年一线抢修，8万余公里巡线，和那些被他改短的夜路</p>
-      <p class="hero-copy">灯灭以后，有人等恢复；他要先赶到现场。</p>
+      <p class="hero-copy">这不是一张“完美海报”，更像一本夜班笔记：照片、纸条、路线、数字，贴在同一张深夜蓝的工作台上。</p>
     </div>
     <div class="metric-stage reveal-on-scroll" aria-label="关键数据">
       <article class="flip-card" data-metric-id="years"><strong>31</strong><span>年扎在一线</span></article>
@@ -48,39 +57,33 @@
   </header>
 
   <main>
-    <section class="story-section split-section" id="road">
+    <section class="story-section road-section" id="road">
       <div class="section-copy reveal-on-scroll">
         <p class="eyebrow">第一幕｜路有多长</p>
         <h2>31年抢修路线</h2>
         <p>电力抢修常常赶在最不方便的时候：深夜、暴雨、寒潮、高温。8万多公里巡线，不只是里程，也是责任半径。</p>
-        <p>这张图不标真实坐标，只还原一次抢修的判断顺序：哪里坏、从哪走、怎么恢复。</p>
+        <p class="source-chip">来源口径：新华社、新华网、工人日报；这里用抽象路线，不画真实 GIS。</p>
       </div>
-      <div class="map-panel reveal-on-scroll" aria-label="抽象巡线路径图">
-        <svg viewBox="0 0 420 280" role="img" aria-label="抽象片区线路和抢修路径">
-          <defs>
-            <linearGradient id="lineGlow" x1="0" x2="1" y1="0" y2="1">
-              <stop offset="0" stop-color="#4FD7FF" />
-              <stop offset="1" stop-color="#FFD84D" />
-            </linearGradient>
-            <filter id="glow">
-              <feGaussianBlur stdDeviation="3.5" result="blur" />
-              <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
-            </filter>
-          </defs>
-          <path class="map-road" d="M30 210 C90 168 84 96 160 84 S268 112 376 42" />
-          <path class="map-road dim" d="M52 68 C112 96 132 156 210 158 S298 128 382 194" />
-          <path class="map-route" d="M44 222 C96 206 123 156 175 140 C225 122 270 96 355 58" />
-          <g class="tower" transform="translate(72 170)"><path d="M0 46 L18 0 L36 46 M8 28 H28 M4 38 H32" /></g>
-          <g class="tower" transform="translate(208 106)"><path d="M0 46 L18 0 L36 46 M8 28 H28 M4 38 H32" /></g>
-          <g class="tower" transform="translate(330 38)"><path d="M0 46 L18 0 L36 46 M8 28 H28 M4 38 H32" /></g>
-        </svg>
-        <button class="fault-point" style="left:18%;top:58%" data-fault-index="0">A</button>
-        <button class="fault-point" style="left:47%;top:34%" data-fault-index="1">B</button>
-        <button class="fault-point" style="left:76%;top:66%" data-fault-index="2">C</button>
-        <div class="fault-detail" id="fault-detail" aria-live="polite">
-          <strong>点击故障点</strong>
-          <span>查看“故障点 → 抢修路线 → 处理结果”。</span>
+      <div class="road-collage reveal-on-scroll">
+        <figure class="photo-card road-person tilt-right">
+          <img src="./assets/story/road-person-map.webp" alt="张黎明查看线路图资料照片">
+          <figcaption>先看图，再出车</figcaption>
+        </figure>
+        <div class="map-panel photo-card" aria-label="抽象巡线路径图">
+          <img src="./assets/story/road-map-close.webp" alt="手绘线路图近景">
+          <img class="route-arrow-sticker" src="./assets/story/sticker-arrow.webp" alt="">
+          <button class="fault-point" style="left:18%;top:58%" data-fault-index="0">A</button>
+          <button class="fault-point" style="left:47%;top:34%" data-fault-index="1">B</button>
+          <button class="fault-point" style="left:76%;top:66%" data-fault-index="2">C</button>
+          <div class="fault-detail" id="fault-detail" aria-live="polite">
+            <strong>点击故障点</strong>
+            <span>查看“故障点 → 抢修路线 → 处理结果”。</span>
+          </div>
         </div>
+        <figure class="photo-card flashlight-card tilt-left">
+          <img src="./assets/story/road-flashlight.webp" alt="手电照明下的线路图">
+          <figcaption>1500+ 张线路草图，把找路时间省下来</figcaption>
+        </figure>
       </div>
       <div class="paper-wall reveal-on-scroll" aria-label="线路图资料墙">
         <div class="paper-card">杆塔位置</div>
@@ -94,29 +97,35 @@
       <div class="section-copy reveal-on-scroll">
         <p class="eyebrow">第二幕｜把时间省下来</p>
         <h2>从45分钟到8分钟</h2>
-        <p>很多小发明，起点不是灵感，而是同一个麻烦一次次出现。</p>
+        <p>很多小发明，起点不是灵感，而是同一个麻烦一次次出现。拖动滑块，看流程如何从“登高更换”变成“地面操作”。</p>
       </div>
       <div class="compare-card reveal-on-scroll">
         <div class="time-headline"><span>45分钟</span><i>→</i><span>8分钟</span></div>
+        <div class="compare-photos" aria-hidden="true">
+          <figure class="photo-card before-photo">
+            <img src="./assets/story/time-aerial.webp" alt="">
+            <figcaption>改造前：高处、停电、排查</figcaption>
+          </figure>
+          <figure class="photo-card after-photo">
+            <img src="./assets/story/time-switch.webp" alt="">
+            <figcaption>改造后：地面、拉杆、复核</figcaption>
+          </figure>
+        </div>
         <label class="slider-label" for="slider-input">拖动滑块，对比改造前后流程</label>
         <input id="slider-input" class="slider-input" type="range" min="0" max="100" value="50" aria-label="拖动对比45分钟和8分钟流程">
         <div class="compare-track">
           <div class="flow-column old-flow" id="old-flow">
             <h3>改造前</h3>
-            <ol>
-              <li>停电隔离</li><li>登高作业</li><li>更换保险</li><li>复核送电</li>
-            </ol>
+            <ol><li>停电隔离</li><li>登高作业</li><li>更换保险</li><li>复核送电</li></ol>
           </div>
           <div class="flow-column new-flow" id="new-flow">
             <h3>改造后</h3>
-            <ol>
-              <li>地面操作</li><li>快速更换</li><li>复核送电</li>
-            </ol>
+            <ol><li>地面操作</li><li>快速更换</li><li>复核送电</li></ol>
           </div>
           <div class="compare-divider" id="compare-divider" aria-hidden="true"></div>
         </div>
         <div class="time-result" id="time-result">缩短约82.2%</div>
-        <p class="note">提示：按(45-8)/45计算；页面展示为一位小数。</p>
+        <p class="note">按(45-8)/45计算；页面展示为一位小数。案例用于解释“可摘取式低压刀闸”的效率变化。</p>
       </div>
     </section>
 
@@ -125,6 +134,11 @@
         <p class="eyebrow">第三幕｜创新怎么长出来</p>
         <h2>从故障点到发明点</h2>
         <p>经验要留下来，不能只靠口口相传。零散的“好办法”，得变成别人也能用的方法。</p>
+      </div>
+      <div class="workbench-collage reveal-on-scroll">
+        <figure class="photo-card tilt-left"><img src="./assets/story/innovation-person.webp" alt="张黎明在创新工作室"><figcaption>把夜班经验带回工作室</figcaption></figure>
+        <figure class="photo-card"><img src="./assets/story/innovation-notebook.webp" alt="抢修笔记本"><figcaption>故障、路线、工具，一条条写下来</figcaption></figure>
+        <figure class="photo-card tilt-right"><img src="./assets/story/innovation-team.webp" alt="创新工作室设备"><figcaption>从手边工具改起</figcaption></figure>
       </div>
       <div class="funnel-wrap reveal-on-scroll" aria-label="创新漏斗图">
         <button class="funnel-step" data-funnel-index="0">现场痛点</button>
@@ -135,14 +149,8 @@
       </div>
       <div class="funnel-detail reveal-on-scroll" id="funnel-detail" aria-live="polite">点击漏斗节点，查看经验如何变成果。</div>
       <div class="case-grid reveal-on-scroll">
-        <article class="case-card" data-case-index="0">
-          <h3>可摘取式低压刀闸</h3>
-          <p>从45分钟压缩到8分钟，站在地面完成操作。</p>
-        </article>
-        <article class="case-card" data-case-index="1">
-          <h3>抢修知识沉淀</h3>
-          <p>近万个故障分析，沉淀成案例库与百宝书。</p>
-        </article>
+        <article class="case-card" data-case-index="0"><span>CASE 01</span><h3>可摘取式低压刀闸</h3><p>从45分钟压缩到8分钟，站在地面完成操作。</p></article>
+        <article class="case-card" data-case-index="1"><span>CASE 02</span><h3>抢修知识沉淀</h3><p>近万个故障分析，沉淀成案例库与百宝书。</p></article>
       </div>
       <div class="keyword-cloud reveal-on-scroll" aria-label="报道关键词云">
         <span class="w5">抢修</span><span class="w5">创新</span><span class="w4">服务</span><span class="w4">线路</span><span class="w4">故障</span><span class="w3">机器人</span><span class="w3">楼道</span><span class="w3">社区</span><span class="w2">图纸</span><span class="w2">万家</span>
@@ -153,20 +161,16 @@
       <div class="section-copy reveal-on-scroll">
         <p class="eyebrow">第四幕｜把人从高处换回地面</p>
         <h2>机器人接过高危工序</h2>
-        <p>更快之外，还要更安全：少一点高处作业，多一点地面控制。</p>
+        <p>更快之外，还要更安全：少一点高处作业，多一点地面控制。点击部件标签，看机器替人靠近危险的一步。</p>
       </div>
       <div class="robot-panel reveal-on-scroll">
-        <svg class="robot-svg" viewBox="0 0 360 300" role="img" aria-label="配网带电作业机器人结构拆解示意">
-          <circle class="robot-halo" cx="180" cy="146" r="116" />
-          <rect class="robot-body" x="132" y="100" width="96" height="88" rx="22" />
-          <circle class="robot-eye" cx="164" cy="132" r="10" />
-          <circle class="robot-eye" cx="198" cy="132" r="10" />
-          <path class="robot-arm" d="M132 146 C82 126 72 82 58 48" />
-          <path class="robot-arm" d="M228 146 C282 122 292 92 316 58" />
-          <path class="robot-arm yellow" d="M150 188 C122 222 100 236 82 260" />
-          <path class="robot-arm yellow" d="M210 188 C236 220 260 238 280 260" />
-          <text x="180" y="228" text-anchor="middle">地面遥控</text>
-        </svg>
+        <figure class="photo-card robot-main-photo">
+          <img src="./assets/story/robot-machine.webp" alt="配网带电作业机器人资料图">
+          <figcaption>带电作业机器人：从“人上杆”到“机上杆”</figcaption>
+        </figure>
+        <figure class="photo-card robot-person-photo tilt-left">
+          <img src="./assets/story/robot-person.webp" alt="张黎明与带电作业机器人">
+        </figure>
         <div class="robot-controls" role="group" aria-label="机器人部件说明">
           <button data-part="insulation">绝缘</button>
           <button data-part="positioning">定位</button>
@@ -184,16 +188,24 @@
         <p>抢修解决的是一时的黑，社区服务照见的是每天回家的路。滚动这一屏，看楼道一层层亮起来。</p>
       </div>
       <div class="building-wrap reveal-on-scroll" aria-label="黑楼道点亮动效">
-        <div class="building-roof">黎明·善小 微基金</div>
-        <div class="building-grid">
-          <span class="building-window" data-light-step="1"></span><span class="building-window" data-light-step="2"></span><span class="building-window" data-light-step="3"></span>
-          <span class="building-window" data-light-step="4"></span><span class="building-window" data-light-step="5"></span><span class="building-window" data-light-step="6"></span>
-          <span class="building-window" data-light-step="7"></span><span class="building-window" data-light-step="8"></span><span class="building-window" data-light-step="9"></span>
-          <span class="building-window" data-light-step="10"></span><span class="building-window" data-light-step="11"></span><span class="building-window" data-light-step="12"></span>
-          <span class="building-window" data-light-step="13"></span><span class="building-window" data-light-step="14"></span><span class="building-window" data-light-step="15"></span>
-          <span class="building-window" data-light-step="16"></span><span class="building-window" data-light-step="17"></span><span class="building-window" data-light-step="18"></span>
+        <div class="corridor-stack">
+          <img class="corridor-img corridor-dark" src="./assets/story/community-dark.webp" alt="老旧楼道黑暗状态">
+          <img class="corridor-img corridor-lit" src="./assets/story/community-lit.webp" alt="老旧楼道灯亮状态">
+          <div class="building-grid" aria-hidden="true">
+            <span class="building-window" data-light-step="1"></span><span class="building-window" data-light-step="2"></span><span class="building-window" data-light-step="3"></span>
+            <span class="building-window" data-light-step="4"></span><span class="building-window" data-light-step="5"></span><span class="building-window" data-light-step="6"></span>
+            <span class="building-window" data-light-step="7"></span><span class="building-window" data-light-step="8"></span><span class="building-window" data-light-step="9"></span>
+            <span class="building-window" data-light-step="10"></span><span class="building-window" data-light-step="11"></span><span class="building-window" data-light-step="12"></span>
+            <span class="building-window" data-light-step="13"></span><span class="building-window" data-light-step="14"></span><span class="building-window" data-light-step="15"></span>
+            <span class="building-window" data-light-step="16"></span><span class="building-window" data-light-step="17"></span><span class="building-window" data-light-step="18"></span>
+          </div>
         </div>
         <p class="light-caption" id="light-caption">有人回家，不该摸黑上楼。</p>
+      </div>
+      <div class="community-album reveal-on-scroll">
+        <figure class="photo-card"><img src="./assets/story/community-repair.webp" alt="志愿者维修楼道灯"><figcaption>修一盏灯</figcaption></figure>
+        <figure class="photo-card"><img src="./assets/story/community-walk.webp" alt="居民从楼道经过"><figcaption>照一段回家路</figcaption></figure>
+        <figure class="photo-card"><img src="./assets/story/community-people.webp" alt="张黎明社区服务"><figcaption>把服务留在社区</figcaption></figure>
       </div>
       <div class="community-stats reveal-on-scroll">
         <article><strong>11</strong><span>个社区</span></article>
@@ -211,6 +223,10 @@
         <h2>更多人跟着出发</h2>
         <p>一个人的脚步终会慢下来。留下来的线路图、案例库和工具，会带着更多人继续走。</p>
       </div>
+      <figure class="photo-card legacy-photo reveal-on-scroll">
+        <img src="./assets/story/legacy-team.webp" alt="张黎明带团队资料照片">
+        <figcaption>经验扩散：从一个人，到一支队伍</figcaption>
+      </figure>
       <div class="chart-card reveal-on-scroll">
         <div id="legacy-chart" class="legacy-chart" role="img" aria-label="从张黎明向方法、队伍、结果扩散的网络图"></div>
         <div id="legacy-fallback" class="legacy-fallback" hidden>
