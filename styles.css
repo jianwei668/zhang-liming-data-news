@@ -189,3 +189,14 @@ main .story-section > :not(.section-decor){position:relative;z-index:2}.section-
 .source-footer>p{
 text-indent:2em;
 }
+
+/* Split transition cards into separate indented paragraphs when needed. */
+.transition-copy p{
+  margin:0;
+  color:inherit;
+  font:inherit;
+  text-indent:2em;
+}
+.transition-copy p+p{
+  margin-top:.35em;
+}
