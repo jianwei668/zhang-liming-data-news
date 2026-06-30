@@ -158,3 +158,24 @@ main .story-section > :not(.section-decor){position:relative;z-index:2}.section-
 .compact-media-grid.community-gallery .photo-card:nth-child(3) img{
   object-position:center 36%;
 }
+
+/* Keep the corridor before/after comparison compact and side by side on phones. */
+@media(max-width:430px){
+  .corridor-duo{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:8px;
+  }
+  .corridor-photo{
+    width:100%;
+    height:auto;
+    min-height:0;
+    aspect-ratio:3/4;
+  }
+  .corridor-photo figcaption{
+    left:6px;
+    right:6px;
+    bottom:6px;
+    padding:6px 7px;
+    font-size:.68rem;
+  }
+}
