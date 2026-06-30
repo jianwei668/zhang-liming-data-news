@@ -179,3 +179,13 @@ main .story-section > :not(.section-decor){position:relative;z-index:2}.section-
     font-size:.68rem;
   }
 }
+
+/* Editorial body copy uses a standard two-character first-line indent. */
+.lead-sentence,
+.hero-long,
+.section-copy p:not(.eyebrow),
+.transition-copy,
+.ending,
+.source-footer>p{
+text-indent:2em;
+}
